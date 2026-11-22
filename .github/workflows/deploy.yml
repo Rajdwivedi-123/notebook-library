@@ -29,7 +29,7 @@ jobs:
           node-version: '24'
 
       - name: Install dependencies
-        run: npm install
+        run: npm run build -- --mode github
 
       - name: Build notebook catalog
         run: npm run catalog --if-present
