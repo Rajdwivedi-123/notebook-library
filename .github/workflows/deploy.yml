@@ -29,13 +29,13 @@ jobs:
           node-version: '24'
 
       - name: Install dependencies
-        run: npm run build -- --mode github
+        run: npm install
 
       - name: Build notebook catalog
         run: npm run catalog --if-present
 
-      - name: Build website
-        run: npm run build
+      - name: Build website for GitHub Pages
+        run: npm run build -- --mode github
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
